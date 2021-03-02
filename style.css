@@ -124,7 +124,21 @@ header .content .menu .toggle .icon {
 
 header .content .menu .toggle .icon svg {
   width: 24px;
+  padding: 6px;
   fill: #222;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+header .content .menu .toggle .icon svg:hover {
+  background: #dddddd;
+}
+
+header .content .menu .toggle .icon svg:focus {
+  background: #c4c5c5;
 }
 
 header .content .menu .hero {
@@ -176,6 +190,7 @@ main {
           align-items: center;
   width: 100%;
   margin-top: auto;
+  padding-bottom: 5%;
   margin-bottom: auto;
 }
 
@@ -212,7 +227,9 @@ main .input {
 }
 
 main .input #inputBar {
-  margin: 40px auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 28px auto 12px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,8 +244,8 @@ main .input #inputBar {
 }
 
 main .input #inputBar:hover, main .input #inputBar:focus, main .input #inputBar:active {
-  -webkit-box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 main .input #inputBar .search svg {
@@ -238,9 +255,14 @@ main .input #inputBar .search svg {
 }
 
 main .input #inputBar input {
+  margin: 10px 0;
   outline: none;
   border: none;
   width: 100%;
+}
+
+main .input #inputBar input:focus {
+  border-right: 2px solid #c7c7c786;
 }
 
 main .input #inputBar .mike svg {
@@ -343,5 +365,25 @@ svg:hover {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
+}
+
+#inputBar input:-webkit-autofill,
+#inputBar input:-webkit-autofill:hover,
+#inputBar input:-webkit-autofill:focus,
+#inputBar textarea:-webkit-autofill,
+#inputBar textarea:-webkit-autofill:hover,
+#inputBar textarea:-webkit-autofill:focus,
+#inputBar select:-webkit-autofill,
+#inputBar select:-webkit-autofill:hover,
+#inputBar select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  -moz-transition: background-color 5000s ease-in-out 0s;
+  -ms-transition: background-color 5000s ease-in-out 0s;
+  -o-transition: background-color 5000s ease-in-out 0s;
 }
 /*# sourceMappingURL=style.css.map */
