@@ -13,7 +13,7 @@
 
 <!-- <script src="script.js" defer></script> -->
 <script defer>
-	const mike= document.querySelector("#mike");
+
 	const search = () => {
 		let input = document.querySelector("#mainInput");
 		if (input.value != null) {
@@ -46,7 +46,7 @@
 			// console.log("hello world")
 
 			recognition.stop();
-
+			mike.style="";
 			// setTimeout(search(), 1500);
 
 		}
@@ -71,7 +71,7 @@
 
 		mike.style= "animation-name: example; animation-duration: 1s; animation-iteration-count: infinite;"
 		recognition.start();
-
+		var mike= document.querySelector("#mike");
 
 	}
 </script>
