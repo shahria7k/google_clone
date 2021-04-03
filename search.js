@@ -1,8 +1,13 @@
 var mainInput = document.querySelector("#mainInput");
-
+var mike = document.querySelector("#mike");
 const imgSearch = () => {
 	let value = mainInput.value;
-	window.open(`https://www.google.com.bd/search?&tbm=isch&q=${value}`, "_self");
+	if (value != null) {
+		window.open(
+			`https://www.google.com.bd/search?q=${value}&tbm=isch`,
+			"_self"
+		);
+	}
 };
 mainInput.addEventListener("keyup", function (event) {
 	if (event.keyCode === 13) {
@@ -35,17 +40,13 @@ function runSpeechRecognition() {
 
 	// This runs when the speech recognition service starts
 	recognition.onstart = function () {
-		// action.innerHTML = "<small>listening, please speak...</small>";
+		output.placeholder = "listening, please speak...";
 		// console.log("hello world")
 	};
 
-	recognition.onspeechend = function () {
-		// action.innerHTML = "<small>stopped listening, hope you are done...</small>";
-		// console.log("hello world")
-
+	recognition.onend = function () {
 		recognition.stop();
 		mike.style = "";
-		// setTimeout(search(), 1500);
 	};
 
 	// This runs when the speech recognition service returns result
@@ -56,14 +57,9 @@ function runSpeechRecognition() {
 		// output.classList.remove("hide");
 		output.value = transcript;
 		// console.log(transcript)
-		var mike = document.querySelector("#mike");
 		mike.style = "";
-		setTimeout(() => {
-			window.open(
-				`https://www.google.com.bd/search?&q=${output.value}`,
-				"_self"
-			);
-		}, 1500);
+		console.log("hello");
+		imgSearch();
 	};
 
 	// start recognition
